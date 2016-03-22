@@ -1,0 +1,101 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* new styles */
+div.row
+{
+clear:left;
+margin:6px;
+}
+label
+{
+float:left;
+width:324px
+}
+textarea
+{
+width:200px;
+height:100px;
+}
+div.buttons
+{
+margin-left:150px;
+margin-top:16px;
+}
+
+ul.taskList {
+	padding-top: 30px;
+	margin: 0;
+	padding-left: 12px;
+}
+
+ul.taskList li{
+    clear:left;
+    margin:6px;
+    list-style-type: none;
+}
+
+
+ul.taskList li.strikethrough:checked + label {
+  text-decoration:line-through
+}
+
+.selection_checkbox:checked + .selection_label {
+ text-decoration:line-through;
+}
+
+.wrap {
+            width: 400px;
+            height: 350px;
+            margin: 50px auto;
+            border-radius: 20px;
+            border: solid 8px #2c3033;
+            background: white;
+            box-shadow: 0 0 0px 1px rgba(255,255,255,.4), 0 0 0px 3px #2c3033;
+        }
+
+.task-input {
+	width: 84%;
+	float: left;
+	margin-left: 4%;
+    max-width: 325px;
+}
+
+ .btnSubmit{
+    margin-top: 6px;
+	margin-left: 10px;
+    max-width: 300px;
+}
+
+ .text-danger ul li{
+	color: #b94a48;
+	list-style: outside none none;
+	margin-top: 10px;
+	margin-left: -6%;
+}
+
+ .task-remove {
+	margin-left: 5px;
+ }

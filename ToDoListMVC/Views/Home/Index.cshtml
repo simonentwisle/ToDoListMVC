@@ -1,0 +1,30 @@
+﻿@model ToDoListMVC.Models.ToDoItem
+
+<div class="wrap">
+    @using (Html.BeginForm("_create", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div>   
+           @Html.TextBoxFor(m => m.TaskDescription, new { @class = "form-control task-input", placeholder = "Enter a todo item..." })
+           <input value=">" class="btnSubmit" type="submit">
+        </div>
+    }
+
+    <ul id="tasklist" class="taskList">
+        @foreach (var @item in Model.ToDoItems)
+        {
+            <li>
+                @Html.HiddenFor(model => item.ID)
+                <input id="@item.ID" checked="@item.Checked" taskdescription="@item.TaskDescription" type="checkbox" class="selection_checkbox">
+                <label for="TaskDescription" class="selection_label">@item.TaskDescription</label>
+                @Html.ActionLink("X", "Delete", new { ID = item.ID ,TaskDescription = item.TaskDescription}, new { @class = "task-remove" })
+            </li>
+        }
+    </ul>
+</div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
